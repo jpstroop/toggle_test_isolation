@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <b-button v-b-toggle="'my-collapse'" id="open" class="when-closed">Open</b-button>
+      <b-collapse id="my-collapse">
+        <b-card>
+          <b-button v-b-toggle="'my-collapse'" id="close">Close</b-button>
+          <p class="card-text">Collapse contents Here</p>
+        </b-card>
+      </b-collapse>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.not-collapsed.when-closed {
+  display: none;
 }
 </style>
